@@ -27,6 +27,10 @@ namespace VigenereCipher.WPF.Models.File
                 IsSaved = false;
             }
         }
+        /// <summary>
+        /// Метод, выполняющий сохранение файла
+        /// </summary>
+        /// <returns>Возвращает true, если файл сохранен успешно, false - неуспешно</returns>
         public bool Save()
         {
             try
@@ -61,6 +65,10 @@ namespace VigenereCipher.WPF.Models.File
             }
 
         }
+        /// <summary>
+        /// Метод, выполняющий чтение файла
+        /// </summary>
+        /// <returns>Возвращает true, если файл прочитан успешно, false - неуспешно</returns>
         public bool Read()
         {
             try
@@ -90,32 +98,6 @@ namespace VigenereCipher.WPF.Models.File
             catch
             {
                 return false;
-            }
-        }
-
-        public static string Read(string path)
-        {
-            try
-            {
-                if (Regex.IsMatch(path, @".docx$"))
-                {
-                    using (var document = WordprocessingDocument.Open(path, false))
-                    {
-                        return document.MainDocumentPart.Document.InnerText;
-                    }
-                }
-                else if (Regex.IsMatch(path, @".txt$"))
-                {
-                    return System.IO.File.ReadAllText(path);
-                }
-                else
-                {
-                    return "";
-                }
-            }
-            catch
-            {
-                return "";
             }
         }
     }

@@ -52,7 +52,9 @@ namespace VigenereCipher.WPF.ViewModels
                 RaisePropertyChanged(nameof(Mode));
             }
         }
-
+        /// <summary>
+        /// Свойство ключа шифрования
+        /// </summary>
         public string Key
         {
             get => key;
@@ -62,7 +64,9 @@ namespace VigenereCipher.WPF.ViewModels
                 RaisePropertyChanged(nameof(Key));
             }
         }
-
+        /// <summary>
+        /// Свойство, отвечающее за статус загрузки данных. Если true, то данные загружаются, false - данные загружены
+        /// </summary>
         public bool IsLoading
         {
             get => isLoading;
@@ -98,7 +102,9 @@ namespace VigenereCipher.WPF.ViewModels
                 () => !string.IsNullOrWhiteSpace(Key) && !string.IsNullOrWhiteSpace(Text)
                 );
         }
-
+        /// <summary>
+        /// Метод открытия файла
+        /// </summary>
         private void OpenFile()
         {
             var settings = new OpenFileDialogSettings
@@ -120,7 +126,9 @@ namespace VigenereCipher.WPF.ViewModels
                 catch { dialogService.ShowMessageBox(this, "Не удалось открыть файл!", caption: "Ошибка", icon: System.Windows.MessageBoxImage.Error); }
             }
         }
-
+        /// <summary>
+        /// Метод для сохранения файла
+        /// </summary>
         private void SaveFile()
         {
             if (file.SavePath == null)
@@ -133,7 +141,9 @@ namespace VigenereCipher.WPF.ViewModels
                 SaveResult();
             }
         }
-
+        /// <summary>
+        /// Метод для сохранения файла с указанием пути сохранения и имени файла
+        /// </summary>
         private void SaveAsFile()
         {
             var settings = new SaveFileDialogSettings
@@ -151,6 +161,9 @@ namespace VigenereCipher.WPF.ViewModels
                 SaveResult();
             }
         }
+        /// <summary>
+        /// Метод отображающий информацию об успешности сохранения файла
+        /// </summary>
         private void SaveResult()
         {
             if (file.IsSaved)
