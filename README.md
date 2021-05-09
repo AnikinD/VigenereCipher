@@ -1,4 +1,7 @@
 # Vigenere Cipher
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/79b92ffc79464b3c8454d7f8bd7cf5c8)](https://app.codacy.com/gh/AnikinD/VigenereCipher?utm_source=github.com&utm_medium=referral&utm_content=AnikinD/VigenereCipher&utm_campaign=Badge_Grade_Settings)
+
 Приложение Vigenere Cipher является курсовой работой по курсу обучения NYSS.  
 Программа позволяет производить шифровку и дешифровку текстовых документов с расширениями .txt и .docx шифром Блеза Виженера.
 ____
